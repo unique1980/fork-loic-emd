@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Things to do:
+Things to do, next step: 1er février 
 
 1. Parser des adresses de proxy (genre flux rss)
 
