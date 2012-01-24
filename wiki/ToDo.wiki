@@ -5,13 +5,16 @@
 Things to do:
 
 1. Parser des adresses de proxy (genre flux rss)
---> 
 
-2. Passage du C# à Java
+--> Mr Blue
 
-3. IHM
+2. Passage du C# à Java + IHM
 
-4. Tests d'anonymats
+--> Mr Green, Mr Pink, Mr Red
+
+3. Tests d'anonymats
+
+--> Mr White
 
 
 = Details =
