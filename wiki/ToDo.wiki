@@ -5,8 +5,11 @@
 Things to do:
 
 1. Parser des adresses de proxy (genre flux rss)
+
 2. Passage du C# à Java
+
 3. IHM
+
 4. Tests d'anonymats
 
 
