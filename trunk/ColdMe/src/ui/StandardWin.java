@@ -41,7 +41,7 @@ public class StandardWin extends JFrame
 		
 		JLabel image = new JLabel();
 		image.setIcon(new ImageIcon(StandardWin.class.getResource("/ui/logo-mines.jpg")));
-		image.setBounds(10, 27, 303, 285);
+		image.setBounds(10, 27, 298, 284);
 		getContentPane().add(image);
 		
 		
