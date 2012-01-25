@@ -9,19 +9,19 @@ import javax.swing.*;
  */
 public class StandardWin extends JFrame
 {
-	// Variables declaration
-	private JLabel jLabel1;
 	private JLabel jLabel2;
 	private JTextField jTextField1;
 	private JTextField jTextField2;
 	private JButton jButton1;
 	private JPanel contentPane;
+	private JTextField textField;
 	// End of variables declaration
 
 
 	public StandardWin()
 	{
 		super();
+		getContentPane().setBackground(Color.ORANGE);
 		initializeComponent();
 		//
 		// TODO: Add any constructor code after initializeComponent call
@@ -39,17 +39,11 @@ public class StandardWin extends JFrame
 	 */
 	private void initializeComponent()
 	{
-		jLabel1 = new JLabel();
 		jLabel2 = new JLabel();
 		jTextField1 = new JTextField();
 		jTextField2 = new JTextField();
 		jButton1 = new JButton();
 		contentPane = (JPanel)this.getContentPane();
-
-		//
-		// jLabel1
-		//
-		jLabel1.setText("jLabel1");
 		//
 		// jLabel2
 		//
@@ -87,29 +81,74 @@ public class StandardWin extends JFrame
 			}
 
 		});
-		//
-		// contentPane
-		//
-		contentPane.setLayout(null);
-		addComponent(contentPane, jLabel1, 18,67,60,18);
 		addComponent(contentPane, jLabel2, 16,38,60,18);
 		addComponent(contentPane, jTextField1, 84,35,221,22);
 		addComponent(contentPane, jTextField2, 84,64,80,22);
 		addComponent(contentPane, jButton1, 306,170,83,28);
+		getContentPane().setLayout(null);
+		
+		JComboBox protocol = new JComboBox();
+		protocol.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		protocol.setBounds(396, 368, 68, 22);
+		protocol.setBackground(new Color(255, 255, 255));
+		protocol.setModel(new DefaultComboBoxModel(new String[] {"HTTP", "TCP", "UDP"}));
+		protocol.setSelectedIndex(0);
+		getContentPane().add(protocol);
+		
+		JButton btnZentaaar = new JButton("ZENTARISATION");
+		btnZentaaar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnZentaaar.setFont(new Font("Lucida Console", Font.BOLD, 17));
+		btnZentaaar.setBounds(362, 407, 187, 45);
+		getContentPane().add(btnZentaaar);
+		
+		JLabel lblProtocol = new JLabel("Protocol");
+		lblProtocol.setBackground(Color.PINK);
+		lblProtocol.setForeground(Color.DARK_GRAY);
+		lblProtocol.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblProtocol.setBounds(329, 368, 74, 22);
+		getContentPane().add(lblProtocol);
+		
+		JLabel lblPort = new JLabel("Port");
+		lblPort.setForeground(Color.DARK_GRAY);
+		lblPort.setFont(new Font("Tahoma", Font.BOLD, 14));
+		lblPort.setBackground(Color.PINK);
+		lblPort.setBounds(484, 368, 37, 22);
+		getContentPane().add(lblPort);
+		
+		textField = new JTextField();
+		textField.setText("80");
+		textField.setFont(new Font("Tahoma", Font.BOLD, 14));
+		textField.setBounds(519, 369, 86, 20);
+		getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JMenuBar menuBar = new JMenuBar();
+		menuBar.setBounds(0, 0, 665, 21);
+		getContentPane().add(menuBar);
+		
+		JMenu mnNewMenu = new JMenu("File");
+		menuBar.add(mnNewMenu);
+		
+		JMenu mnNewMenu_1 = new JMenu("?");
+		menuBar.add(mnNewMenu_1);
+		
+		JMenuItem mntmAbout = new JMenuItem("About");
+		mnNewMenu_1.add(mntmAbout);
 		//
 		// StandardWin
 		//
-		this.setTitle("StandardWin - extends JFrame");
+		this.setTitle("LOIC - Ecole des Mines de Douai - ISIC 2012");
 		this.setLocation(new Point(0, 0));
-		this.setSize(new Dimension(571, 446));
+		this.setSize(new Dimension(661, 521));
 		this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 	}
 
 	/** Add Component Without a Layout Manager (Absolute Positioning) */
 	private void addComponent(Container container,Component c,int x,int y,int width,int height)
 	{
-		c.setBounds(x,y,width,height);
-		container.add(c);
 	}
 
 	//
@@ -191,7 +230,4 @@ public class StandardWin extends JFrame
 		}
 		new StandardWin();
 	}
-//= End of Testing =
-
-
 }
